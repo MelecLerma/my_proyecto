@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Juego</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Botón de cerrar (la X) */
+        .cerrar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .cerrar:hover {
+            color: #ff6f61;
+        }
+
+        .producto-img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .precio {
+            font-size: 26px;
+            color: #ff6f61;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-comprar:hover {
+            background-color: #e55b50;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Botón cerrar (la X) -->
+        <a href="index.html" class="cerrar" title="Volver a la página principal">×</a>
+
+        <img id="producto-imagen" class="producto-img" src="" alt="Imagen del juego">
+        <h1 id="producto-nombre">Nombre del Juego</h1>
+        <p id="producto-descripcion">Descripción detallada del juego...</p>
+        
+        <h2>Características:</h2>
+        <ul id="producto-caracteristicas"></ul>
+
+        <h2>Requisitos del sistema:</h2>
+        <ul id="producto-requisitos"></ul>
+
+        <p class="precio" id="producto-precio">$0.00</p>
+        <a id="btn-comprar" class="btn-comprar" href="#">Comprar ahora</a>
+    </div>
+
+<script>
+   const productos = {
+    1: {
+        nombre: "Juego Carrera Máxima",
+        precio: 450,
+        descripcion: "Disfruta de emocionantes carreras en circuitos urbanos y pistas rurales con gráficos de última generación.",
+        imagen: "images/images/l1.jpg",
+        caracteristicas: [
+            "Modos multijugador online",
+            "Personalización de vehículos",
+            "Sonido envolvente 3D"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i5 o superior",
+            "8GB RAM",
+            "Tarjeta gráfica GTX 960 o superior",
+            "Al menos 50GB de espacio libre"
+        ]
+    },
+    2: {
+        nombre: "Juego Acción Avanzada",
+        precio: 500,
+        descripcion: "Enfréntate a enemigos implacables en batallas llenas de adrenalina en un mundo futurista impresionante.",
+        imagen: "images/images/l2.jpg",
+        caracteristicas: [
+            "Campaña intensa para un jugador",
+            "Arsenal de armas futuristas",
+            "Compatibilidad con VR"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i7",
+            "16GB RAM",
+            "Tarjeta gráfica GTX 1070 o superior",
+            "70GB de espacio disponible"
+        ]
+    },
+    3: {
+        nombre: "Juego Estrategia Final",
+        precio: 550,
+        descripcion: "Lidera tu imperio a la gloria con estrategias complejas en este juego de conquista global.",
+        imagen: "images/images/l3.jpg",
+        caracteristicas: [
+            "Mapa mundial en tiempo real",
+            "Diplomacia y comercio avanzado",
+            "Modo cooperativo online"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i5",
+            "8GB RAM",
+            "Tarjeta gráfica GTX 970",
+            "60GB de almacenamiento libre"
+        ]
+    },
+    4: {
+        nombre: "Juego Estrategia Final",
+        precio: 550,
+        descripcion: "Lidera tu imperio a la gloria con estrategias complejas en este juego de conquista global.",
+        imagen: "images/images/l4.jpg",
+        caracteristicas: [
+            "Mapa mundial en tiempo real",
+            "Diplomacia y comercio avanzado",
+            "Modo cooperativo online"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i5",
+            "8GB RAM",
+            "Tarjeta gráfica GTX 970",
+            "60GB de almacenamiento libre"
+        ]
+    },
+    5: {
+        nombre: "Juego Estrategia Final",
+        precio: 550,
+        descripcion: "Lidera tu imperio a la gloria con estrategias complejas en este juego de conquista global.",
+        imagen: "images/images/l5.jpg",
+        caracteristicas: [
+            "Mapa mundial en tiempo real",
+            "Diplomacia y comercio avanzado",
+            "Modo cooperativo online"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i5",
+            "8GB RAM",
+            "Tarjeta gráfica GTX 970",
+            "60GB de almacenamiento libre"
+        ]
+    },
+    6: {
+        nombre: "Juego Estrategia Final",
+        precio: 550,
+        descripcion: "Lidera tu imperio a la gloria con estrategias complejas en este juego de conquista global.",
+        imagen: "images/images/l6.jpg",
+        caracteristicas: [
+            "Mapa mundial en tiempo real",
+            "Diplomacia y comercio avanzado",
+            "Modo cooperativo online"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i5",
+            "8GB RAM",
+            "Tarjeta gráfica GTX 970",
+            "60GB de almacenamiento libre"
+        ]
+    },
+    7: {
+        nombre: "Juego Estrategia Final",
+        precio: 550,
+        descripcion: "Lidera tu imperio a la gloria con estrategias complejas en este juego de conquista global.",
+        imagen: "images/images/l7.jpg",
+        caracteristicas: [
+            "Mapa mundial en tiempo real",
+            "Diplomacia y comercio avanzado",
+            "Modo cooperativo online"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i5",
+            "8GB RAM",
+            "Tarjeta gráfica GTX 970",
+            "60GB de almacenamiento libre"
+        ]
+    },
+    8: {
+        nombre: "Juego Estrategia Final",
+        precio: 550,
+        descripcion: "Lidera tu imperio a la gloria con estrategias complejas en este juego de conquista global.",
+        imagen: "images/images/l8.jpg",
+        caracteristicas: [
+            "Mapa mundial en tiempo real",
+            "Diplomacia y comercio avanzado",
+            "Modo cooperativo online"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i5",
+            "8GB RAM",
+            "Tarjeta gráfica GTX 970",
+            "60GB de almacenamiento libre"
+        ]
+    },
+    9: {
+        nombre: "Juego Estrategia Final",
+        precio: 550,
+        descripcion: "Lidera tu imperio a la gloria con estrategias complejas en este juego de conquista global.",
+        imagen: "images/images/l9.jpg",
+        caracteristicas: [
+            "Mapa mundial en tiempo real",
+            "Diplomacia y comercio avanzado",
+            "Modo cooperativo online"
+        ],
+        requisitos: [
+            "Windows 10 64-bit",
+            "Intel Core i5",
+            "8GB RAM",
+            "Tarjeta gráfica GTX 970",
+            "60GB de almacenamiento libre"
+        ]
+    }
+};
+
+        // Agrega más juegos (4, 5, 6...) si quieres
+
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+
+    if (productos[id]) {
+        const prod = productos[id];
+
+        document.getElementById('producto-nombre').textContent = prod.nombre;
+        document.getElementById('producto-descripcion').textContent = prod.descripcion;
+        document.getElementById('producto-precio').textContent = '$' + prod.precio.toFixed(2);
+        document.getElementById('producto-imagen').src = prod.imagen;
+        document.getElementById('btn-comprar').href = 'pago.html?producto=' + id;
+
+        const listaCaracteristicas = document.getElementById('producto-caracteristicas');
+        prod.caracteristicas.forEach(car => {
+            let li = document.createElement('li');
+            li.textContent = car;
+            listaCaracteristicas.appendChild(li);
+        });
+
+        const listaRequisitos = document.getElementById('producto-requisitos');
+        prod.requisitos.forEach(req => {
+            let li = document.createElement('li');
+            li.textContent = req;
+            listaRequisitos.appendChild(li);
+        });
+
+    } else {
+        document.querySelector('.container').innerHTML = '<h2>Producto no encontrado</h2>';
+    }
+</script>
+
+</body>
+</html>
+

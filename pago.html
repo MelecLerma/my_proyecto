@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proceso de Pago</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-pagar {
+            width: 100%;
+            padding: 15px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .btn-pagar:hover {
+            background-color: #e55b50;
+        }
+        .success-message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>💳 Datos de Pago</h2>
+
+        <form id="form-pago">
+            <label>Nombre completo</label>
+            <input type="text" required>
+
+            <label>Dirección</label>
+            <input type="text" required>
+
+            <label>Número de tarjeta</label>
+            <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" required maxlength="19">
+
+            <label>Fecha de expiración</label>
+            <input type="month" required>
+
+            <label>CVV</label>
+            <input type="text" placeholder="123" required maxlength="4">
+
+            <button class="btn-pagar" type="submit">Pagar ahora</button>
+        </form>
+
+        <div class="success-message" id="mensaje-exito">
+            ✅ ¡Pago realizado con éxito! Gracias por tu compra 🛒
+        </div>
+    </div>
+
+<script>
+    document.getElementById('form-pago').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Mostrar mensaje de éxito
+        document.getElementById('mensaje-exito').style.display = 'block';
+
+        // Vaciar carrito
+        localStorage.removeItem('carrito');
+
+        // Redirigir después de 3 segundos
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 3000);
+    });
+</script>
+
+</body>
+</html>

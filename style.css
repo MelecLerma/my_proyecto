@@ -1,0 +1,641 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* color de fondo*/
+body {
+    font-family: "Poppins", sans-serif;
+    background:#1e1e2f;
+    color: #fff;
+}
+
+img {
+ max-width: 100%;
+ border-radius: 10px;
+ transition: transform 0.3s ease; /* Efecto de zoom */
+}
+
+img:hover {
+    transform: scale(1.1); /* Aquí se hace el zoom al pasar el mouse */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.header {
+    background-image: url(images/images/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 80px 0;
+    position: relative;
+
+}
+
+.menu {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+/* Logo mejorado */
+.menu a {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #0044ff; /* Azul neón */
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(5, 153, 5, 0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-family: 'Poppins', sans-serif; /* Mantiene tu fuente */
+}
+
+.menu a:hover {
+    color: #ff0266; /* Rosa neón al pasar */
+    text-shadow: 0 0 20px rgba(255, 2, 102, 0.8);
+}
+
+
+.logo {
+    color: #ff3c00;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
+
+.menu .navbar ul li {
+    float: left;
+
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color:#ff9100;
+}
+
+#menu {
+    display: none;
+}
+
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display:none;
+
+}
+
+
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.header-txt {
+    flex-basis: 50%;
+}
+
+
+.header-txt h1 {
+    font-size: 50px;
+}
+
+@media (max-width: 768px) {
+    .header-txt h1 {
+        font-size: 35px;
+    }
+}
+
+
+.header-txt span {
+    color:  #ff9100;
+}
+
+.header-txt p {
+    font-size: 17px;
+    color: #d1d1e0;
+    margin-bottom: 45px;
+}
+
+.butons {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.btn-1, .btn-2, .btn-3 {
+    display: inline-block;
+    padding: 11px 35px;
+    border: 2px solid rgb(2, 70, 7);
+    border-radius: 25px;
+    margin-right: 25px;
+    font-size: 17px;
+    color: #fff;
+
+}
+
+.btn-1:hover {
+    background-color:rgb(2, 70, 7);
+}
+
+.popular {
+    padding: 100px 0;
+    text-align: center;
+}
+
+
+h2 {
+    color: bisque;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+
+.popular-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.popular-container img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Productos */
+.productos {
+    padding: 100px 0;
+    text-align: center;
+    background: #1e1e2f; /* Fondo oscuro y elegante */
+}
+
+.product-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.product-1 {
+    background: #2a2a40; /* Fondo de cada tarjeta */
+    padding: 20px;
+    border-radius: 15px;
+    overflow: hidden; /* Oculta cuando se hace zoom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-1:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+}
+
+/* Imagen del producto */
+.product-1 img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-1 img:hover {
+    transform: scale(1.1); /* Efecto zoom cuando pasa el mouse */
+}
+
+/* Texto debajo de la imagen */
+.product-txt {
+    margin: 15px 0;
+    font-size: 22px;
+    color: #ffeb3b; /* Amarillo para resaltar */
+    font-weight: bold;
+}
+.product-1 img, .product-resumen img {
+    object-fit: cover;
+}
+
+
+h3 {
+    font-size: 20px;
+    color: #ffffff; /* Blanco puro */
+    margin-bottom: 20px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price p {
+    font-size: 18px;
+    color: #00e676; /* Verde neón */
+}
+
+/* Botón comprar */
+.btn-2 {
+    background-color: #0206f3;
+    color: #fff;
+    padding: 8px 20px;
+    margin-right: 0;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+}
+
+.btn-2:hover {
+    background: rgb(2, 70, 7); /* Verde al pasar mouse */
+    transform: scale(1.1);
+}
+
+
+/* comentarios */
+
+.contact {
+    padding: 150px 300px;
+    
+}
+
+.contact-content  {
+    background-color: #0011f1;
+    text-align: center;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+.contact-content form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-content input[type="email"] {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 300px;
+}
+
+
+
+input {
+    padding: 60px 25px;
+    background-color: #2763d3;
+    border: 0;
+    border-radius: 25px;
+    outline: auto;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 17px;
+
+}
+
+
+
+::placeholder {
+    color: #f0f0f3;
+    font: size 17px; ;
+}
+
+
+
+
+/* boton enviar */
+.btn-3 {
+    background: #050df3;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-3:hover {
+    background: #014d12;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.link ul {
+    display: flex;
+    gap: 20px;
+}
+
+.link ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.link ul li a:hover {
+    color: #ff0606;
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background: #2a2a40;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal-content input, .modal-content button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.modal-content button {
+    background: #0206f3;
+    color: white;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .menu {
+        padding: 20px;
+    }
+    .menu label {
+        display: initial;
+    }
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f10000;
+        display: none;
+        flex-direction: column;
+    }
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .menu .navbar ul li {
+         width: 100%;
+
+    }
+
+    .menu .navbar ul li a:hover{
+        color: #464746;
+       
+    }
+
+    .popular-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        min-height: 0vh;
+        padding: 90px 30px 50px 30px;
+    }
+
+    .header-txt {
+        text-align: center;
+        flex-basis: 100%;
+    }
+
+    .header-txt h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    .butons {
+        justify-content: center;
+    }
+
+    .btn-1:last-of-type {
+        margin-right: 0;
+
+    }
+
+    .popular {
+        display: none;
+
+    }
+
+    .product {
+        padding: 30px;
+    }
+
+    .product-content {
+        grid-template-columns: repeat(1,1fr);
+        gap: 30px;
+
+    }
+
+    .product-1 img {
+        width: 100px;
+
+    }
+    .contact {
+        padding: 20px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    input {
+        margin: 0 0 20px 0;
+
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .link ul {
+        margin-top:20px; ;
+    }
+}
+
+/* Página de pago mejorada */
+
+.payment {
+    padding: 100px 20px;
+    text-align: center;
+    background: #1e1e2f;
+    color: #fff;
+}
+
+.payment h2 {
+    color: #ffeb3b;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.payment-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.product-resumen {
+    background: #2a2a40;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.product-resumen img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.product-resumen img:hover {
+    transform: scale(1.1);
+}
+
+.product-resumen h3 {
+    font-size: 24px;
+    color: #00e676;
+    margin-bottom: 10px;
+}
+
+.product-resumen p {
+    font-size: 20px;
+    color: #ff9100;
+}
+
+.payment-form {
+    background: #2a2a40;
+    padding: 20px;
+    border-radius: 15px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.payment-form label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #ffeb3b;
+    font-weight: bold;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #33334d;
+    color: #fff;
+    font-size: 16px;
+}
+
+.payment-form input::placeholder {
+    color: #b0b0c3;
+}
+
+.payment-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #0206f3;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.payment-form button:hover {
+    background: #014d12;
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #00e676;
+    animation: fadeIn 1s ease-in-out;
+}
